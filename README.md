@@ -27,6 +27,8 @@ This repository contains ruby files with ruby code.
 
 **Hello Rails frontend** Is a project created as part of creting a Hello World project with two apps. It represents the frontend part of the project.
 
+## [Link to Backend project](https://github.com/kalbek/hello-world-backend)
+
 ## 🛠 Built With <a name="built-with">Ruby, Ruby on Rails</a>
 
 ### Tech Stack <a name="tech-stack">Ruby, Ruby on Rails </a>
