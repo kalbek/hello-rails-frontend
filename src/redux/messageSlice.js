@@ -5,28 +5,28 @@ const initialState = {
   error: null,
 };
 
-export const getRandomMessage = createAsyncThunk(
-  'messages/getRandomMessage',
+export const getRandomGeneratedMessage = createAsyncThunk(
+  'messages/getRandomGeneratedMessage',
   async () => {
     const response = await fetch('http://localhost:3000/rand_greeting');
-    const data = await response.json();
-    return data.body;
+    const messageData = await response.json();
+    return messageData.body;
   },
 );
 
-const messagesSlice = createSlice({
+const greetingsMessagesSlice = createSlice({
   name: 'messages',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getRandomMessage.fulfilled, (state, action) => {
+    builder.addCase(getRandomGeneratedMessage.fulfilled, (state, action) => {
       state.body = action.payload;
     });
 
-    builder.addCase(getRandomMessage.rejected, (state, action) => {
+    builder.addCase(getRandomGeneratedMessage.rejected, (state, action) => {
       state.error = action.error.message;
     });
   },
 });
 
-export default messagesSlice;
+export default greetingsMessagesSlice;
